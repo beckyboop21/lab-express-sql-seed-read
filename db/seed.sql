@@ -2,4 +2,6 @@
 
 
 INSERT INTO songs (name, artist, album, time, is_favorite) VALUES
-('Hit em up', 'Tupac', 'Death Row Greatest Hit','3:00', true)
+('Freemind', 'Tems', 'Tems','3:00', true),
+('In the Air Tonight', 'Phil Collins', 'Face Value', '2:30', true),
+('Save your tears ', 'The Weeknd', 'After Hours', '#:00', true);

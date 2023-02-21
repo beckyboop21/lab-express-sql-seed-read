@@ -1,12 +1,16 @@
-DROP DATABASE IF EXISTS tuner;
-CREATE DATABASE tuner;
+-- Creating the database
+CREATE DATABASE songs_dev;
 
-\c tuner;
+-- Connect
+\c songs_dev;
 
-CREATE TABLE songs(
-    name TEXT NOT NULL,
-    artist TEXT,
-    album TEXT,
-    time TEXT,
-    is_favorite BOOLEAN
-);
+-- Create table
+CREATE TABLE 
+    songs (
+        id serial PRIMARY KEY, 
+        name TEXT NOT NULL, 
+        artist TEXT NOT NULL,
+        album TEXT NOT NULL,
+        time TEXT NOT NULL,
+        is_favorite BOOLEAN
+); 

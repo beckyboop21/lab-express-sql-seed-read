@@ -1,25 +1,25 @@
-// Dependencies
-const cors = require('cors');
-const express = require('express');
-const songsController = require('./controllers/songController');
+const express = require("express");
+const cors = require("cors");
 
-// Congfig
+
+// Configure
 const app = express();
 
 // Middleware
-
-app.use(cors());
 app.use(express.json());
-app.use('/songs', songsController);
+app.use(cors());
 
-// Routes for your get 
-app.get('/', (req, res) => {
-  res.send('Welcome to the Songs App');
+// Routes
+app.get("/", (req, res) => {
+  res.status(200).send("Welcome to Tuner");
 });
 
-// 404
-app.get('*', (req, res) => {
-  res.status(404).send('Page not found');
+app.get("/not-found", (req, res) => {
+  res.status(404).json({ error: "page does not exist" });
+});
+
+app.get("*", (req, res) => {
+  res.redirect("/not-found");
 });
 
 // Export
